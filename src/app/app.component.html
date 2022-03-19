@@ -1,5 +1,5 @@
 <div class="command-list">
-    <button *ngFor="let command of executedCommandList; index as i;" (click)="revertTo(i);">
+    <button *ngFor="let command of executedCommandList; index as i;" (click)="revertTo(i);hiddenButton.focus();">
         <span [class.active]="i === currentCommandIndex">
             {{command.type}}
         </span>
@@ -28,4 +28,5 @@
             </td>
         </tr>
     </table>
+    <button #hiddenButton class="hidden-button"></button>
 </div>
