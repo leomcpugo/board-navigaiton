@@ -16,22 +16,30 @@
     }
 }
 
-table {
-    margin: 1em auto auto auto;
-    tr {
-        td {
-            width: 4rem;
-            height: 4rem;
-            border: 1px solid gray;
+.player-board {
+    flex-grow: 1;
+    .instructions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    table {
+        margin: 1em auto auto auto;
+        tr {
+            td {
+                width: 4rem;
+                height: 4rem;
+                border: 1px solid gray;
 
-            &.painted {
-                background-color: yellow;
-            }
+                &.painted {
+                    background-color: yellow;
+                }
 
-            img {
-                display: block;
-                max-width: 100%;
-                max-height: 100%;
+                img {
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
             }
         }
     }

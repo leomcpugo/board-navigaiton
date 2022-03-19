@@ -1,16 +1,31 @@
 <div class="command-list">
-    <button *ngFor="let command of executedCommandList; index as i;" (click)="revertTo(i)">
+    <button *ngFor="let command of executedCommandList; index as i;" (click)="revertTo(i);">
         <span [class.active]="i === currentCommandIndex">
             {{command.type}}
         </span>
     </button>
 </div>
-<table>
-    <tr *ngFor="let row of board.tiles; index as rIndex;">
-        <td *ngFor="let column of row; index as cIndex;" [class.painted]="column.state === TileState.PAINTED">
-            <ng-container *ngIf="column.content">
-                <img src="/assets/player.webp">
-            </ng-container>
-        </td>
-    </tr>
-</table>
+<div class="player-board">
+    <div class="instructions">
+        <h1>
+            Player board with undo and redo
+        </h1>
+        <p>Instructions</p>
+        <ul>
+            <li>Move with the arrows</li>
+            <li>Press SPACE to paint the tile</li>
+            <li>Use "command/control" + "Z" to undo a movement</li>
+            <li>Use "command/control" + "Z" + "SHIFT" to redo a movement</li>
+            <li>Click the command history to jump back to a command</li>
+        </ul>
+    </div>
+    <table>
+        <tr *ngFor="let row of board.tiles; index as rIndex;">
+            <td *ngFor="let column of row; index as cIndex;" [class.painted]="column.state === TileState.PAINTED">
+                <ng-container *ngIf="column.content">
+                    <img src="/assets/player.webp">
+                </ng-container>
+            </td>
+        </tr>
+    </table>
+</div>
