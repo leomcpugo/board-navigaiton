@@ -1,0 +1,16 @@
+<div class="command-list">
+    <button *ngFor="let command of executedCommandList; index as i;" (click)="revertTo(i)">
+        <span [class.active]="i === currentCommandIndex">
+            {{command.type}}
+        </span>
+    </button>
+</div>
+<table>
+    <tr *ngFor="let row of board.tiles; index as rIndex;">
+        <td *ngFor="let column of row; index as cIndex;" [class.painted]="column.state === TileState.PAINTED">
+            <ng-container *ngIf="column.content">
+                <img src="/assets/player.webp">
+            </ng-container>
+        </td>
+    </tr>
+</table>

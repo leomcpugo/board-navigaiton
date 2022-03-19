@@ -1,0 +1,38 @@
+:host {
+    display: flex;
+}
+
+.command-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 10em;
+
+    height: 100vh;
+    overflow-y: scroll;
+
+    .active {
+        font-weight: bold;
+    }
+}
+
+table {
+    margin: 1em auto auto auto;
+    tr {
+        td {
+            width: 4rem;
+            height: 4rem;
+            border: 1px solid gray;
+
+            &.painted {
+                background-color: yellow;
+            }
+
+            img {
+                display: block;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+    }
+}
