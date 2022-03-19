@@ -51,12 +51,9 @@ export class AppComponent implements OnInit {
     let command: CommandBase | null = null;
 
     if ((event.ctrlKey || event.metaKey) && event.code === 'KeyZ') {
-      this.boardMasterService.revert();
-      return;
-    }
-
-    if ((event.ctrlKey || event.metaKey) && event.code === 'KeyY') {
-      this.boardMasterService.redo();
+      event.shiftKey ?
+        this.boardMasterService.redo() :
+        this.boardMasterService.revert();
       return;
     }
 

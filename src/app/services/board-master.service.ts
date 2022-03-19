@@ -39,5 +39,12 @@ export class BoardMasterService {
     }
 
     goToCommand(index: number) {
+        while (index != this.currentCommandIndex) {
+            if (index > this.currentCommandIndex) {
+                this.redo();
+            } else {
+                this.revert();
+            }
+        }
     }
 }
